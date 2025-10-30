@@ -13,6 +13,11 @@ resetButton.style.padding = "10px 20px";
 resetButton.style.fontSize = "16px";
 document.querySelector("#buttonContainer").appendChild(resetButton); // append to html file
 
+//globalize variables allowing us to drag our mouse on sketchpad
+let isMouseDown = false;
+document.body.addEventListener("mousedown", () => isMouseDown = true);
+document.body.addEventListener("mouseup", () => isMouseDown = false);
+
 //function to randomize rgb colors in the grid
 function getRandomColor (){
     const r = Math.floor(Math.random() * 256);
@@ -35,11 +40,15 @@ function createGrid(size) {
         square.style.border = "1px solid black";
         
         //changes square to color. 
+        square.addEventListener("click", () => {
+            square.style.backgroundColor = getRandomColor();
+        });
+
         square.addEventListener("mouseenter", () => {
-            if (!square.style.backgroundColor) {
+            if (isMouseDown) {
                 square.style.backgroundColor = getRandomColor();
             }
-        });
+         });
         container.appendChild(square);
     }
 }
