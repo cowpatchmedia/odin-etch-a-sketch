@@ -14,6 +14,7 @@ resetButton.style.fontSize = "16px";
 document.querySelector("#buttonContainer").appendChild(resetButton); // append to html file
 
 //globalize variables allowing us to drag our mouse on sketchpad
+//this doesn't quite work perfectly, something to consider improving on. 
 let isMouseDown = false;
 document.body.addEventListener("mousedown", () => isMouseDown = true);
 document.body.addEventListener("mouseup", () => isMouseDown = false);
