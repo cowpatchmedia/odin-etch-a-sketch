@@ -11,7 +11,7 @@ I will keep the 100 cap, but want to change the code so that the 640px grid snap
 
 I would also like the darken squares when the mouse enters the square multiple times. 
 
-The dom manipulation for this project felt fairly straightforward after the inital grid set up. the practive repetitions definitely helped here. 
+The dom manipulation for this project felt fairly straightforward after the inital grid set up. the practice repetitions definitely helped here. 
 flexbox wasn't too bad for this project since it is all within a 640px grid. 
 
 I would also like to improve the GUI in future versions of this project. 
