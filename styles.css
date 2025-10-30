@@ -1,3 +1,11 @@
+/* adds border to square elements. squares are smaller boxes within the grid. */
 * {
     box-sizing: border-box;
+}
+
+/* position reset button */
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
