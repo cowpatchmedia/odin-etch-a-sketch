@@ -34,11 +34,30 @@ resetButton.style.fontSize = "16px";
 
 // add event listener for button
 resetButton.addEventListener("click", () =>{
-    prompt("What grid size would you like to choose?");
-    const squares = document.querySelectorAll(".square");
-    squares.forEach(square => {
-        square.style.backgroundColor = "white";
-    })
+    // prompt("What grid size would you like to choose?");
+    // const squares = document.querySelectorAll(".square");
+    // squares.forEach(square => {
+    //     square.style.backgroundColor = "white";
+    // })
+    let newSize = parseInt(prompt("Enter new grid size up to 100 (e.g. 16, 50, 100)"), 10);
+    if (!newSize || newSize <1) return;
+
+    container.innerHTML="";
+
+    const gridSize = 640 / newSize;
+
+    for (let i = 0; i < newSize * newSize; i++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        square.style.width = `${gridSize}px`;
+        square.style.height = `${gridSize}px`;
+        square.style.border = "1px solid black";
+
+        square.addEventListener("mouseenter", () => {
+            square.style.backgroundColor = "black";
+        });
+        container.appendChild(square);
+    }
 });
 
 document.querySelector("#buttonContainer").appendChild(resetButton);
